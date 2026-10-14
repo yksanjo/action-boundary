@@ -1,5 +1,15 @@
 # action-boundary
 
+Check the exact proposed agent action before a controller lets it send, publish or spend.
+
+## Try the safe demo
+
+```sh
+python3 demo.py
+```
+
+The synthetic demo requires review, accepts an exact fixture approval, rejects a changed payload and denies declared credential data. It never sends. Fixture approval is not human consent. Keep the trusted controller, policy and real approvals outside the agent's write access.
+
 A small, local preflight check for agent actions. An agent proposes structured JSON. The gate checks an explicit policy and returns `allow`, `needs-review`, or `deny`. It never performs the action.
 
 Python 3.10+, standard library only. No model API, network, telemetry, or private accounts.
